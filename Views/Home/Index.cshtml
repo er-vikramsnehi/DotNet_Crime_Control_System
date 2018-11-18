@@ -1,0 +1,346 @@
+﻿@model cmspro.Models.ViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/w3.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="~/Scripts/utils.js"></script>
+
+<style>
+    canvas, canvas2 {
+        -moz-user-select: none; 
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+</style>
+
+
+
+
+<div class="w3-container-fluid inde">
+
+    <div id="army1" hidden>
+        @{ Html.RenderAction("Army", "Home");}
+        <br />
+        <br />
+    </div>
+
+    <div id="missile">
+        @{ Html.RenderAction("Missile", "Home");}
+        <br />
+        <br />
+    </div>
+   
+    <div class="col-lg-12">
+        @{ Html.RenderAction("Sliders", "Home");}
+        <hr style="color:darkred;" />
+    </div>
+    <div class="row diagonal">
+
+        <div class="col-lg-12" id="army2">
+
+            <div class="col-lg-9 panel" id="climg">
+
+                <div class="col-lg-9">
+                    <div id="missile">
+                        @{ Html.RenderAction("Chart", "Home");}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 panel-body" id="imggal">
+                    <div id="imgPreview" class="thumbnail w3-card-4" style="display:none;">
+                        <img class="ímg-responsive" id="targetImg" />
+                        <div class="caption">
+                            <p id="description"></p>
+                            <a href="#" onclick="ClearPreview()" class="btn btn-danger">Clear Image</a>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    $(document).ready(function () {
+                        $("#imggal").sortable();
+                    }
+                </script>
+
+
+
+
+            </div>
+
+            <div class="col-lg-3">
+
+                @using (Html.BeginForm("CreateAccount", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+                    @Html.DropDownListFor(model => model.user_type, ViewBag.TypeList as SelectList, "--Account Type--", new { @class = "form-control w3-padding", required = "" })
+                    @Html.ValidationMessageFor(model => model.user_type, "", new { @class = "error" })
+                    <br />
+                    @Html.TextBoxFor(model => model.user_name, new { @class = "form-control w3-padding", @placeholder = "name", required = "" })
+                    @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "error" })
+                    <br />
+                    @Html.TextBoxFor(model => model.user_email, new { @class = "form-control w3-padding", @placeholder = "email", required = "", type = "email" })
+                    @Html.ValidationMessageFor(model => model.user_email, "", new { @class = "error" })
+                    <br />
+                    @Html.TextBoxFor(model => model.user_mobile, new { @class = "form-control w3-padding", @placeholder = "Mobile", required = "" })
+                    @Html.ValidationMessageFor(model => model.user_mobile, "", new { @class = "error" })
+                    <br />
+
+                    <label class="w3-input w3-border w3-hover-blue w3-red">
+                        <i class="glyphicon glyphicon-cloud-upload"></i> Upload Image
+                        <input type="file" name="user_image" id="img" class="form-control w3-hide " accept="image/*" required />
+                    </label>
+                    @Html.ValidationMessageFor(model => model.user_image, "", new { @class = "error" })
+
+                    <br />
+                    @Html.PasswordFor(model => model.user_pwd, new { @class = "form-control w3-padding", @placeholder = "Password", required = "" })
+                    @Html.ValidationMessageFor(model => model.user_pwd, "", new { @class = "error" })
+                    <br />
+                    @Html.TextBoxFor(model => model.site_name, new { @class = "form-control w3-padding ", @placeholder = "http://", required = "", type = "url" })
+                    @Html.ValidationMessageFor(model => model.site_name, "", new { @class = "error" })
+
+
+
+                    <br />
+                    <input type="submit" value="Register Data" class="btn btn-success w3-input" />
+                }
+
+            </div>
+        </div>
+    </div>
+    <hr />
+
+    <div class="row diagonal">
+        @{ Html.RenderAction("FIR", "Home");}
+    </div>
+
+
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    $(function () {
+        var header = $(".inde");
+
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            if (scroll >= 50) {
+                header.addClass("scrolled");
+            } else {
+                header.removeClass("scrolled");
+            }
+        });
+
+    });
+
+</script>
+
+
+<p>Next Line</p>
+
+
+
+
+
+
+
+<style>
+</style>
+
+
+
+<section class="navbar-fixed-bottom">
+    <button class="w3-orange btn w3-input w3-card-4" data-toggle="modal" data-target="#firreport">Report Your F.I.R.</button>
+</section>
+
+
+
+
+
+
+
+
+
+<script>
+    var SendEmail = function () {
+        $.ajax({
+            type: "POST",
+            url: "/Home/SendMail",
+            success: function (data) {
+                alert("Success");
+            }
+        })
+    }
+
+</script>
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#caapture").change(function () {
+            var File = this.files;
+
+            if (File && File[0]) {
+                ReadCrimeImg(File[0]);
+            }
+        })
+    })
+
+  var ReadCrimeImg = function (file) {
+        var reader = new FileReader;
+        var image = new Image;
+
+        reader.readAsDataURL(file);
+        reader.onload = function (_file) {
+            image.src = _file.target.result;
+            image.onload = function () {
+                var height = this.height;
+                var width = this.width;
+                var type = file.type;
+                var name = file.name;
+                var size = ~~(file.size / 1024) + "KB";
+
+
+                $("#TargetCrimePriview").attr('src', _file.target.result);
+
+                $("#CrimePreview").show();
+            }
+
+
+        }
+
+    }
+
+    var ClearPreview = function () {
+
+        $("#caapture").val('');
+
+        $("#CrimePreview").hide();
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#img").change(function () {
+            var File = this.files;
+
+            if (File && File[0]) {
+                ReadImage(File[0]);
+            }
+        })
+    })
+
+
+
+
+    var ReadImage = function (file) {
+        var reader = new FileReader;
+        var image = new Image;
+
+        reader.readAsDataURL(file);
+        reader.onload = function (_file) {
+            image.src = _file.target.result;
+            image.onload = function () {
+                var height = this.height;
+                var width = this.width;
+                var type = file.type;
+                var name = file.name;
+                var size = ~~(file.size / 1024) + "KB";
+
+
+                $("#targetImg").attr('src', _file.target.result);
+                $("#description").text("Size:" + size + "," + height + "," + width + " ," + name + " ");
+                $("#imgPreview").show();
+            }
+
+
+        }
+
+    }
+
+    var ClearPreview = function () {
+
+        $("#img").val('');
+        $("#description").text('');
+        $("#imgPreview").hide();
+    }
+
+
+
+    var arralist = ["Gagan", "Gan", "Gungun", "Boy"];
+
+    $("#textautocomplete").autocomplete({
+
+        source: function (request, response) {
+            var text = $("#textautocomplete").val();
+            $.ajax({
+                type: "GET",
+                url: "/Home/GetSuggesion",
+                data: { text: text },
+                success: function (data) {
+                    response($.map.data, function (item) {
+                        return { lable: item, value: item }
+                    })
+                }
+            })
+        }
+    })
+
+    $("#sugg").autocomplete({
+        source: arralist
+    })
+</script>
+
+
+
+
+<script>
+    document.getElementById("army1").style.display = "none";
+    document.getElementById("missile").style.display = "none";
+
+    function Army() {
+        document.getElementById("army1").style.display = "block";
+        document.getElementById("army2").style.display = "none";
+        document.getElementById("missile").style.display = "none";
+    }
+
+    function Missile() {
+        document.getElementById("army1").style.display = "none";
+        document.getElementById("army2").style.display = "none";
+        document.getElementById("missile").style.display = "block";
+    }
+</script>

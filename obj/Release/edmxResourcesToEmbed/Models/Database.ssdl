@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="activate">
+    <Key>
+      <PropertyRef Name="activate_id" />
+    </Key>
+    <Property Name="activate_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="activate_account" Type="nvarchar(max)" />
+    <Property Name="activate_user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="approvedfir">
+    <Key>
+      <PropertyRef Name="approvedfir_id" />
+    </Key>
+    <Property Name="approvedfir_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="approvedfir_title" Type="nvarchar(max)" />
+    <Property Name="approvedfir_email" Type="nvarchar(max)" />
+    <Property Name="approvedfir_police_id" Type="nvarchar(max)" />
+    <Property Name="approvedfir_mobile" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="army">
+    <Key>
+      <PropertyRef Name="army_id" />
+    </Key>
+    <Property Name="army_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="army_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_mobile" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_posting" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_account_number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_ifsc_code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_wife" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_father" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_medal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_counter_strike" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_hurt_count" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="army_summary" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="blog">
+    <Key>
+      <PropertyRef Name="blog_id" />
+    </Key>
+    <Property Name="blog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="blog_article" Type="nvarchar(max)" />
+    <Property Name="blogger_name" Type="nvarchar(max)" />
+    <Property Name="blogger_email" Type="nvarchar(max)" />
+    <Property Name="blogger_image" Type="nvarchar(max)" />
+    <Property Name="blog_image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="contact_id" />
+    </Key>
+    <Property Name="contact_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contact_name" Type="nvarchar(max)" />
+    <Property Name="contact_mail" Type="nvarchar(max)" />
+    <Property Name="contact_mobile" Type="nvarchar(max)" />
+    <Property Name="contact_why" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="craft">
+    <Key>
+      <PropertyRef Name="craft_id" />
+    </Key>
+    <Property Name="craft_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="craft_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="craft_size" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="craft_weight" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="craft_specification" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="craft_image" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="crime">
+    <Key>
+      <PropertyRef Name="crime_id" />
+    </Key>
+    <Property Name="crime_id" Type="int" Nullable="false" />
+    <Property Name="crime_state" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="crime_city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="crime_iframe" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="crime_rate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="crime_title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="crime_summary" Type="nvarchar(max)" />
+    <Property Name="crime_criminal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="crime_control" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="firapproved">
+    <Key>
+      <PropertyRef Name="fir_approved_id" />
+    </Key>
+    <Property Name="fir_approved_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fir_title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fir_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="approve" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="firpolice">
+    <Key>
+      <PropertyRef Name="approvedfir_id" />
+    </Key>
+    <Property Name="approvedfir_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="approvedfir_title" Type="nvarchar(max)" />
+    <Property Name="approvedfir_email" Type="nvarchar(max)" />
+    <Property Name="approvedfir_police_id" Type="nvarchar(max)" />
+    <Property Name="approvedfir_mobile" Type="nvarchar(max)" />
+    <Property Name="approved_fir" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="invite">
+    <Key>
+      <PropertyRef Name="e_id" />
+    </Key>
+    <Property Name="e_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email_invite" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email_message" Type="nvarchar(max)" />
+    <Property Name="email_subject" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="police">
+    <Key>
+      <PropertyRef Name="police_id" />
+    </Key>
+    <Property Name="police_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="police_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_mobile" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_idcard" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_station" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_state" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_home_address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_activation" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="policetype">
+    <Key>
+      <PropertyRef Name="police_type_id" />
+    </Key>
+    <Property Name="police_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="police_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_type_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_type_link" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="policework">
+    <Key>
+      <PropertyRef Name="police_work_id" />
+    </Key>
+    <Property Name="police_work_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="police_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_mobile" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_state" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_work" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="police_time" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="report">
+    <Key>
+      <PropertyRef Name="fir_id" />
+    </Key>
+    <Property Name="fir_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fir_title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="reporter_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="reporter_mobile" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="reporter_email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="report_for" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="report_summary" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="report_image" Type="nvarchar(max)" />
+    <Property Name="report_processing" Type="nvarchar(max)" />
+    <Property Name="report_city" Type="nvarchar(max)" />
+    <Property Name="report_state" Type="nvarchar(max)" />
+    <Property Name="report_address" Type="nvarchar(max)" />
+    <Property Name="police_id" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="site_id" />
+    </Key>
+    <Property Name="site_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="nvarchar(max)" />
+    <Property Name="site_name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="user_email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="user_pwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="user_image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="user_epwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="user_type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="user_active" Type="int" />
+    <Property Name="user_mobile" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="usertype">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_user_id" Type="int" Nullable="false" />
+    <Property Name="role_user_type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CMSModelStoreContainer">
+    <EntitySet Name="activate" EntityType="Self.activate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="approvedfir" EntityType="Self.approvedfir" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="army" EntityType="Self.army" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="blog" EntityType="Self.blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="craft" EntityType="Self.craft" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="crime" EntityType="Self.crime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="firapproved" EntityType="Self.firapproved" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="firpolice" EntityType="Self.firpolice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="invite" EntityType="Self.invite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="police" EntityType="Self.police" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="policetype" EntityType="Self.policetype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="policework" EntityType="Self.policework" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="report" EntityType="Self.report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usertype" EntityType="Self.usertype" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

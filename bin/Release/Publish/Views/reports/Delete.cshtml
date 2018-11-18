@@ -1,0 +1,120 @@
+﻿@model cmspro.Models.report
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>report</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fir_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fir_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reporter_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reporter_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reporter_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reporter_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reporter_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reporter_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.report_for)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.report_for)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.report_summary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.report_summary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.report_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.report_image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.report_processing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.report_processing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.report_city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.report_city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.report_state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.report_state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.report_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.report_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_id)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

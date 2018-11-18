@@ -1,0 +1,86 @@
+﻿<!--Side menu and right menu -->
+
+
+<section>
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar w3-card-4">
+        <!-- User Info -->
+        @if (Session["name"] != null)
+        {
+            <div class="user-info">
+                <br />
+                <div class="admin-image w3-circle w3-card-2"> <img src='~/uploads/@Session["image"]' alt=""> </div>
+                <div class="admin-action-info">
+
+                    <span>Welcome</span>
+                    <h3>@Session["name"]</h3>
+
+                    <ul>
+                        <li><a data-placement="bottom" title="Go to Inbox" href="mail-inbox.html"><i class="zmdi zmdi-email"></i></a></li>
+                        <li><a data-placement="bottom" title="Go to Profile" href="profile.html"><i class="zmdi zmdi-account"></i></a></li>
+                        <li><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings"></i></a></li>
+                        <li><a data-placement="bottom" title="Full Screen" href="sign-in.html"><i class="zmdi zmdi-sign-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        <br />
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="menu w3-white">
+           
+            
+             <div id="imgPreview" class="thumbnail panel-body" style="display:none;">
+                    <img class="ímg-responsive w3-card-4" id="targetImg" />
+                    <div class="caption">
+                        <p id="description"></p>
+                        <a href="#" onclick="ClearPreview()" class="btn btn-danger" style="color:white;">Clear Image</a>
+
+                    </div>
+                </div>
+            
+
+
+
+             <ul class="list">
+                 <li class="header">MAIN NAVIGATION</li>
+                 <li class="active open"><a onclick="DashBoard()"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                 <li><a onclick="AddCraft()"><i class="zmdi zmdi-airplane"></i><span>Add Missile</span> </a></li>
+                 <li><a onclick="ViewCraft()"><i class="zmdi zmdi-shield-security"></i><span>View Missile</span> </a></li>
+                 <li><a onclick="AddPolice()"><i class="zmdi zmdi-alarm-check"></i><span>Add Police</span> </a></li>
+                 <li><a onclick="ViewPolice()"><i class="zmdi zmdi-alarm-check"></i><span>View Police</span> </a></li>
+
+
+
+
+             </ul>
+        </div>
+        <!-- #Menu -->
+    </aside>
+    <!-- #END# Left Sidebar -->
+    <!-- Right Sidebar -->
+
+
+
+
+    <!-- #END# Right Sidebar -->
+</section>

@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CMSModelStoreContainer" CdmEntityContainer="CMSEntities">
+    <EntitySetMapping Name="activates">
+      <EntityTypeMapping TypeName="CMSModel.activate">
+        <MappingFragment StoreEntitySet="activate">
+          <ScalarProperty Name="activate_id" ColumnName="activate_id" />
+          <ScalarProperty Name="activate_account" ColumnName="activate_account" />
+          <ScalarProperty Name="activate_user_id" ColumnName="activate_user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="armies">
+      <EntityTypeMapping TypeName="CMSModel.army">
+        <MappingFragment StoreEntitySet="army">
+          <ScalarProperty Name="army_id" ColumnName="army_id" />
+          <ScalarProperty Name="army_name" ColumnName="army_name" />
+          <ScalarProperty Name="army_email" ColumnName="army_email" />
+          <ScalarProperty Name="army_mobile" ColumnName="army_mobile" />
+          <ScalarProperty Name="army_posting" ColumnName="army_posting" />
+          <ScalarProperty Name="army_account_number" ColumnName="army_account_number" />
+          <ScalarProperty Name="army_ifsc_code" ColumnName="army_ifsc_code" />
+          <ScalarProperty Name="army_image" ColumnName="army_image" />
+          <ScalarProperty Name="army_wife" ColumnName="army_wife" />
+          <ScalarProperty Name="army_father" ColumnName="army_father" />
+          <ScalarProperty Name="army_address" ColumnName="army_address" />
+          <ScalarProperty Name="army_medal" ColumnName="army_medal" />
+          <ScalarProperty Name="army_counter_strike" ColumnName="army_counter_strike" />
+          <ScalarProperty Name="army_hurt_count" ColumnName="army_hurt_count" />
+          <ScalarProperty Name="army_summary" ColumnName="army_summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="crafts">
+      <EntityTypeMapping TypeName="CMSModel.craft">
+        <MappingFragment StoreEntitySet="craft">
+          <ScalarProperty Name="craft_id" ColumnName="craft_id" />
+          <ScalarProperty Name="craft_name" ColumnName="craft_name" />
+          <ScalarProperty Name="craft_size" ColumnName="craft_size" />
+          <ScalarProperty Name="craft_weight" ColumnName="craft_weight" />
+          <ScalarProperty Name="craft_specification" ColumnName="craft_specification" />
+          <ScalarProperty Name="craft_image" ColumnName="craft_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="crimes">
+      <EntityTypeMapping TypeName="CMSModel.crime">
+        <MappingFragment StoreEntitySet="crime">
+          <ScalarProperty Name="crime_id" ColumnName="crime_id" />
+          <ScalarProperty Name="crime_state" ColumnName="crime_state" />
+          <ScalarProperty Name="crime_city" ColumnName="crime_city" />
+          <ScalarProperty Name="crime_iframe" ColumnName="crime_iframe" />
+          <ScalarProperty Name="crime_rate" ColumnName="crime_rate" />
+          <ScalarProperty Name="crime_title" ColumnName="crime_title" />
+          <ScalarProperty Name="crime_summary" ColumnName="crime_summary" />
+          <ScalarProperty Name="crime_criminal" ColumnName="crime_criminal" />
+          <ScalarProperty Name="crime_control" ColumnName="crime_control" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invites">
+      <EntityTypeMapping TypeName="CMSModel.invite">
+        <MappingFragment StoreEntitySet="invite">
+          <ScalarProperty Name="e_id" ColumnName="e_id" />
+          <ScalarProperty Name="email_invite" ColumnName="email_invite" />
+          <ScalarProperty Name="email_message" ColumnName="email_message" />
+          <ScalarProperty Name="email_subject" ColumnName="email_subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sites">
+      <EntityTypeMapping TypeName="CMSModel.Site">
+        <MappingFragment StoreEntitySet="Site">
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="site_name" ColumnName="site_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="CMSModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="user_pwd" ColumnName="user_pwd" />
+          <ScalarProperty Name="user_image" ColumnName="user_image" />
+          <ScalarProperty Name="user_epwd" ColumnName="user_epwd" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="user_active" ColumnName="user_active" />
+          <ScalarProperty Name="user_mobile" ColumnName="user_mobile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usertypes">
+      <EntityTypeMapping TypeName="CMSModel.usertype">
+        <MappingFragment StoreEntitySet="usertype">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role_user_id" ColumnName="role_user_id" />
+          <ScalarProperty Name="role_user_type" ColumnName="role_user_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="police">
+      <EntityTypeMapping TypeName="CMSModel.police">
+        <MappingFragment StoreEntitySet="police">
+          <ScalarProperty Name="police_activation" ColumnName="police_activation" />
+          <ScalarProperty Name="police_home_address" ColumnName="police_home_address" />
+          <ScalarProperty Name="police_city" ColumnName="police_city" />
+          <ScalarProperty Name="police_state" ColumnName="police_state" />
+          <ScalarProperty Name="police_station" ColumnName="police_station" />
+          <ScalarProperty Name="police_idcard" ColumnName="police_idcard" />
+          <ScalarProperty Name="police_type" ColumnName="police_type" />
+          <ScalarProperty Name="police_email" ColumnName="police_email" />
+          <ScalarProperty Name="police_mobile" ColumnName="police_mobile" />
+          <ScalarProperty Name="police_name" ColumnName="police_name" />
+          <ScalarProperty Name="police_id" ColumnName="police_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="policetypes">
+      <EntityTypeMapping TypeName="CMSModel.policetype">
+        <MappingFragment StoreEntitySet="policetype">
+          <ScalarProperty Name="police_type_link" ColumnName="police_type_link" />
+          <ScalarProperty Name="police_type_name" ColumnName="police_type_name" />
+          <ScalarProperty Name="police_id" ColumnName="police_id" />
+          <ScalarProperty Name="police_type_id" ColumnName="police_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="policeworks">
+      <EntityTypeMapping TypeName="CMSModel.policework">
+        <MappingFragment StoreEntitySet="policework">
+          <ScalarProperty Name="police_time" ColumnName="police_time" />
+          <ScalarProperty Name="police_work" ColumnName="police_work" />
+          <ScalarProperty Name="police_status" ColumnName="police_status" />
+          <ScalarProperty Name="police_state" ColumnName="police_state" />
+          <ScalarProperty Name="police_city" ColumnName="police_city" />
+          <ScalarProperty Name="police_email" ColumnName="police_email" />
+          <ScalarProperty Name="police_mobile" ColumnName="police_mobile" />
+          <ScalarProperty Name="police_name" ColumnName="police_name" />
+          <ScalarProperty Name="police_work_id" ColumnName="police_work_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="firapproveds">
+      <EntityTypeMapping TypeName="CMSModel.firapproved">
+        <MappingFragment StoreEntitySet="firapproved">
+          <ScalarProperty Name="approve" ColumnName="approve" />
+          <ScalarProperty Name="police_id" ColumnName="police_id" />
+          <ScalarProperty Name="fir_id" ColumnName="fir_id" />
+          <ScalarProperty Name="fir_title" ColumnName="fir_title" />
+          <ScalarProperty Name="fir_approved_id" ColumnName="fir_approved_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reports">
+      <EntityTypeMapping TypeName="CMSModel.report">
+        <MappingFragment StoreEntitySet="report">
+          <ScalarProperty Name="police_id" ColumnName="police_id" />
+          <ScalarProperty Name="report_address" ColumnName="report_address" />
+          <ScalarProperty Name="report_state" ColumnName="report_state" />
+          <ScalarProperty Name="report_city" ColumnName="report_city" />
+          <ScalarProperty Name="report_processing" ColumnName="report_processing" />
+          <ScalarProperty Name="report_image" ColumnName="report_image" />
+          <ScalarProperty Name="report_summary" ColumnName="report_summary" />
+          <ScalarProperty Name="report_for" ColumnName="report_for" />
+          <ScalarProperty Name="reporter_email" ColumnName="reporter_email" />
+          <ScalarProperty Name="reporter_mobile" ColumnName="reporter_mobile" />
+          <ScalarProperty Name="reporter_name" ColumnName="reporter_name" />
+          <ScalarProperty Name="fir_title" ColumnName="fir_title" />
+          <ScalarProperty Name="fir_id" ColumnName="fir_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="CMSModel.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="contact_why" ColumnName="contact_why" />
+          <ScalarProperty Name="contact_mobile" ColumnName="contact_mobile" />
+          <ScalarProperty Name="contact_mail" ColumnName="contact_mail" />
+          <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blogs">
+      <EntityTypeMapping TypeName="CMSModel.blog">
+        <MappingFragment StoreEntitySet="blog">
+          <ScalarProperty Name="blog_image" ColumnName="blog_image" />
+          <ScalarProperty Name="blogger_image" ColumnName="blogger_image" />
+          <ScalarProperty Name="blogger_email" ColumnName="blogger_email" />
+          <ScalarProperty Name="blogger_name" ColumnName="blogger_name" />
+          <ScalarProperty Name="blog_article" ColumnName="blog_article" />
+          <ScalarProperty Name="blog_id" ColumnName="blog_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="firpolice">
+      <EntityTypeMapping TypeName="CMSModel.firpolouse">
+        <MappingFragment StoreEntitySet="firpolice">
+          <ScalarProperty Name="approved_fir" ColumnName="approved_fir" />
+          <ScalarProperty Name="approvedfir_mobile" ColumnName="approvedfir_mobile" />
+          <ScalarProperty Name="approvedfir_police_id" ColumnName="approvedfir_police_id" />
+          <ScalarProperty Name="approvedfir_email" ColumnName="approvedfir_email" />
+          <ScalarProperty Name="approvedfir_title" ColumnName="approvedfir_title" />
+          <ScalarProperty Name="approvedfir_id" ColumnName="approvedfir_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="approvedfirs">
+      <EntityTypeMapping TypeName="CMSModel.approvedfir">
+        <MappingFragment StoreEntitySet="approvedfir">
+          <ScalarProperty Name="approvedfir_mobile" ColumnName="approvedfir_mobile" />
+          <ScalarProperty Name="approvedfir_police_id" ColumnName="approvedfir_police_id" />
+          <ScalarProperty Name="approvedfir_email" ColumnName="approvedfir_email" />
+          <ScalarProperty Name="approvedfir_title" ColumnName="approvedfir_title" />
+          <ScalarProperty Name="approvedfir_id" ColumnName="approvedfir_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

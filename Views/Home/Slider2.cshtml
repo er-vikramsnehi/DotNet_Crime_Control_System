@@ -1,0 +1,96 @@
+﻿
+
+<script src="~/Scripts/jssor.slider-27.1.0.min.js"></script>
+
+<script type="text/javascript">
+    jssor_2_slider_init = function () {
+
+        var jssor_2_options = {
+            $AutoPlay: 1,
+            $Idle: 0,
+            $SlideDuration: 5000,
+            $SlideEasing: $Jease$.$Linear,
+            $PauseOnHover: 4,
+            $SlideWidth: 140,
+            $Align: 0
+        };
+
+        var jssor_2_slider = new $JssorSlider$("jssor_2", jssor_2_options);
+
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = 980;
+
+        function ScaleSlider() {
+            var containerElement = jssor_2_slider.$Elmt.parentNode;
+            var containerWidth = containerElement.clientWidth;
+
+            if (containerWidth) {
+
+                var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                jssor_2_slider.$ScaleWidth(expectedWidth);
+            }
+            else {
+                window.setTimeout(ScaleSlider, 30);
+            }
+        }
+
+        ScaleSlider();
+
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        /*#endregion responsive code end*/
+    };
+</script>
+
+<link href="~/Content/Slider2.css" rel="stylesheet" />
+
+
+<div id="jssor_2" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:100px;overflow:hidden;visibility:hidden;">
+    <!-- Loading Screen -->
+    <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+    </div>
+    <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:100px;overflow:hidden;">
+
+
+
+
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/0.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/1.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/2.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/3.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/4.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/5.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/6.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/7.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/8.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/9.jpg" />
+        </div>
+        <div data-p="30.00">
+            <img data-u="image" src="~/images/10.jpg" />
+        </div>
+    </div>
+</div>
+<script type="text/javascript">jssor_2_slider_init();</script>

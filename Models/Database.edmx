@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="activate">
+          <Key>
+            <PropertyRef Name="activate_id" />
+          </Key>
+          <Property Name="activate_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="activate_account" Type="nvarchar(max)" />
+          <Property Name="activate_user_id" Type="int" />
+        </EntityType>
+        <EntityType Name="approvedfir">
+          <Key>
+            <PropertyRef Name="approvedfir_id" />
+          </Key>
+          <Property Name="approvedfir_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="approvedfir_title" Type="nvarchar(max)" />
+          <Property Name="approvedfir_email" Type="nvarchar(max)" />
+          <Property Name="approvedfir_police_id" Type="nvarchar(max)" />
+          <Property Name="approvedfir_mobile" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="army">
+          <Key>
+            <PropertyRef Name="army_id" />
+          </Key>
+          <Property Name="army_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="army_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_mobile" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_posting" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_account_number" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_ifsc_code" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_image" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_wife" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_father" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_medal" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_counter_strike" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_hurt_count" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="army_summary" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="blog">
+          <Key>
+            <PropertyRef Name="blog_id" />
+          </Key>
+          <Property Name="blog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="blog_article" Type="nvarchar(max)" />
+          <Property Name="blogger_name" Type="nvarchar(max)" />
+          <Property Name="blogger_email" Type="nvarchar(max)" />
+          <Property Name="blogger_image" Type="nvarchar(max)" />
+          <Property Name="blog_image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="contact_id" />
+          </Key>
+          <Property Name="contact_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="contact_name" Type="nvarchar(max)" />
+          <Property Name="contact_mail" Type="nvarchar(max)" />
+          <Property Name="contact_mobile" Type="nvarchar(max)" />
+          <Property Name="contact_why" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="craft">
+          <Key>
+            <PropertyRef Name="craft_id" />
+          </Key>
+          <Property Name="craft_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="craft_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="craft_size" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="craft_weight" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="craft_specification" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="craft_image" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="crime">
+          <Key>
+            <PropertyRef Name="crime_id" />
+          </Key>
+          <Property Name="crime_id" Type="int" Nullable="false" />
+          <Property Name="crime_state" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="crime_city" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="crime_iframe" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="crime_rate" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="crime_title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="crime_summary" Type="nvarchar(max)" />
+          <Property Name="crime_criminal" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="crime_control" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="firapproved">
+          <Key>
+            <PropertyRef Name="fir_approved_id" />
+          </Key>
+          <Property Name="fir_approved_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fir_title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="fir_id" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_id" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="approve" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="firpolice">
+          <Key>
+            <PropertyRef Name="approvedfir_id" />
+          </Key>
+          <Property Name="approvedfir_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="approvedfir_title" Type="nvarchar(max)" />
+          <Property Name="approvedfir_email" Type="nvarchar(max)" />
+          <Property Name="approvedfir_police_id" Type="nvarchar(max)" />
+          <Property Name="approvedfir_mobile" Type="nvarchar(max)" />
+          <Property Name="approved_fir" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="invite">
+          <Key>
+            <PropertyRef Name="e_id" />
+          </Key>
+          <Property Name="e_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email_invite" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email_message" Type="nvarchar(max)" />
+          <Property Name="email_subject" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="police">
+          <Key>
+            <PropertyRef Name="police_id" />
+          </Key>
+          <Property Name="police_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="police_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_mobile" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_type" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_idcard" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_station" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_state" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_city" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_home_address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_activation" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="policetype">
+          <Key>
+            <PropertyRef Name="police_type_id" />
+          </Key>
+          <Property Name="police_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="police_id" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_type_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_type_link" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="policework">
+          <Key>
+            <PropertyRef Name="police_work_id" />
+          </Key>
+          <Property Name="police_work_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="police_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_mobile" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_city" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_state" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_status" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_work" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="police_time" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="report">
+          <Key>
+            <PropertyRef Name="fir_id" />
+          </Key>
+          <Property Name="fir_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fir_title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="reporter_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="reporter_mobile" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="reporter_email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="report_for" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="report_summary" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="report_image" Type="nvarchar(max)" />
+          <Property Name="report_processing" Type="nvarchar(max)" />
+          <Property Name="report_city" Type="nvarchar(max)" />
+          <Property Name="report_state" Type="nvarchar(max)" />
+          <Property Name="report_address" Type="nvarchar(max)" />
+          <Property Name="police_id" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="nvarchar(max)" />
+          <Property Name="site_name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="user_email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="user_pwd" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="user_image" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="user_epwd" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="user_type" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="user_active" Type="int" />
+          <Property Name="user_mobile" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="usertype">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="role_user_id" Type="int" Nullable="false" />
+          <Property Name="role_user_type" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CMSModelStoreContainer">
+          <EntitySet Name="activate" EntityType="Self.activate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="approvedfir" EntityType="Self.approvedfir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="army" EntityType="Self.army" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="blog" EntityType="Self.blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="craft" EntityType="Self.craft" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="crime" EntityType="Self.crime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="firapproved" EntityType="Self.firapproved" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="firpolice" EntityType="Self.firpolice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invite" EntityType="Self.invite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="police" EntityType="Self.police" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="policetype" EntityType="Self.policetype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="policework" EntityType="Self.policework" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="report" EntityType="Self.report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usertype" EntityType="Self.usertype" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="activate">
+          <Key>
+            <PropertyRef Name="activate_id" />
+          </Key>
+          <Property Name="activate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="activate_account" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="activate_user_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="army">
+          <Key>
+            <PropertyRef Name="army_id" />
+          </Key>
+          <Property Name="army_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="army_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_posting" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_account_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_ifsc_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_wife" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_father" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_medal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_counter_strike" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_hurt_count" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="army_summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="craft">
+          <Key>
+            <PropertyRef Name="craft_id" />
+          </Key>
+          <Property Name="craft_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="craft_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="craft_size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="craft_weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="craft_specification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="craft_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="crime">
+          <Key>
+            <PropertyRef Name="crime_id" />
+          </Key>
+          <Property Name="crime_id" Type="Int32" Nullable="false" />
+          <Property Name="crime_state" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="crime_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="crime_iframe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="crime_rate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="crime_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="crime_summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="crime_criminal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="crime_control" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="invite">
+          <Key>
+            <PropertyRef Name="e_id" />
+          </Key>
+          <Property Name="e_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email_invite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email_message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="email_subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="site_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_epwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_active" Type="Int32" />
+          <Property Name="user_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="usertype">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="role_user_id" Type="Int32" Nullable="false" />
+          <Property Name="role_user_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="activates" EntityType="Self.activate" />
+          <EntitySet Name="armies" EntityType="Self.army" />
+          <EntitySet Name="crafts" EntityType="Self.craft" />
+          <EntitySet Name="crimes" EntityType="Self.crime" />
+          <EntitySet Name="invites" EntityType="Self.invite" />
+          <EntitySet Name="Sites" EntityType="Self.Site" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="usertypes" EntityType="Self.usertype" />
+          <EntitySet Name="police" EntityType="CMSModel.police" />
+          <EntitySet Name="policetypes" EntityType="CMSModel.policetype" />
+          <EntitySet Name="policeworks" EntityType="CMSModel.policework" />
+          <EntitySet Name="firapproveds" EntityType="CMSModel.firapproved" />
+          <EntitySet Name="reports" EntityType="CMSModel.report" />
+          <EntitySet Name="contacts" EntityType="CMSModel.contact" />
+          <EntitySet Name="blogs" EntityType="CMSModel.blog" />
+          <EntitySet Name="firpolice" EntityType="CMSModel.firpolouse" />
+          <EntitySet Name="approvedfirs" EntityType="CMSModel.approvedfir" />
+        </EntityContainer>
+        <EntityType Name="police">
+          <Key>
+            <PropertyRef Name="police_id" />
+          </Key>
+          <Property Name="police_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="police_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_mobile" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_type" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_idcard" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_station" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_state" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_city" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_home_address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_activation" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="policetype">
+          <Key>
+            <PropertyRef Name="police_type_id" />
+          </Key>
+          <Property Name="police_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="police_id" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_type_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_type_link" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="policework">
+          <Key>
+            <PropertyRef Name="police_work_id" />
+          </Key>
+          <Property Name="police_work_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="police_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_mobile" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_city" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_state" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_status" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_work" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_time" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="firapproved">
+          <Key>
+            <PropertyRef Name="fir_approved_id" />
+          </Key>
+          <Property Name="fir_approved_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fir_title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fir_id" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_id" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="approve" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="report">
+          <Key>
+            <PropertyRef Name="fir_id" />
+          </Key>
+          <Property Name="fir_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fir_title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="reporter_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="reporter_mobile" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="reporter_email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="report_for" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="report_summary" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="report_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="report_processing" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="report_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="report_state" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="report_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="police_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="contact_id" />
+          </Key>
+          <Property Name="contact_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="contact_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="contact_mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="contact_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="contact_why" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="blog">
+          <Key>
+            <PropertyRef Name="blog_id" />
+          </Key>
+          <Property Name="blog_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="blog_article" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="blogger_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="blogger_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="blogger_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="blog_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="firpolouse">
+          <Key>
+            <PropertyRef Name="approvedfir_id" />
+          </Key>
+          <Property Name="approvedfir_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="approvedfir_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="approvedfir_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="approvedfir_police_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="approvedfir_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="approved_fir" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="approvedfir">
+          <Key>
+            <PropertyRef Name="approvedfir_id" />
+          </Key>
+          <Property Name="approvedfir_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="approvedfir_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="approvedfir_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="approvedfir_police_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="approvedfir_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CMSModelStoreContainer" CdmEntityContainer="CMSEntities">
+          <EntitySetMapping Name="activates">
+            <EntityTypeMapping TypeName="CMSModel.activate">
+              <MappingFragment StoreEntitySet="activate">
+                <ScalarProperty Name="activate_id" ColumnName="activate_id" />
+                <ScalarProperty Name="activate_account" ColumnName="activate_account" />
+                <ScalarProperty Name="activate_user_id" ColumnName="activate_user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="armies">
+            <EntityTypeMapping TypeName="CMSModel.army">
+              <MappingFragment StoreEntitySet="army">
+                <ScalarProperty Name="army_id" ColumnName="army_id" />
+                <ScalarProperty Name="army_name" ColumnName="army_name" />
+                <ScalarProperty Name="army_email" ColumnName="army_email" />
+                <ScalarProperty Name="army_mobile" ColumnName="army_mobile" />
+                <ScalarProperty Name="army_posting" ColumnName="army_posting" />
+                <ScalarProperty Name="army_account_number" ColumnName="army_account_number" />
+                <ScalarProperty Name="army_ifsc_code" ColumnName="army_ifsc_code" />
+                <ScalarProperty Name="army_image" ColumnName="army_image" />
+                <ScalarProperty Name="army_wife" ColumnName="army_wife" />
+                <ScalarProperty Name="army_father" ColumnName="army_father" />
+                <ScalarProperty Name="army_address" ColumnName="army_address" />
+                <ScalarProperty Name="army_medal" ColumnName="army_medal" />
+                <ScalarProperty Name="army_counter_strike" ColumnName="army_counter_strike" />
+                <ScalarProperty Name="army_hurt_count" ColumnName="army_hurt_count" />
+                <ScalarProperty Name="army_summary" ColumnName="army_summary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="crafts">
+            <EntityTypeMapping TypeName="CMSModel.craft">
+              <MappingFragment StoreEntitySet="craft">
+                <ScalarProperty Name="craft_id" ColumnName="craft_id" />
+                <ScalarProperty Name="craft_name" ColumnName="craft_name" />
+                <ScalarProperty Name="craft_size" ColumnName="craft_size" />
+                <ScalarProperty Name="craft_weight" ColumnName="craft_weight" />
+                <ScalarProperty Name="craft_specification" ColumnName="craft_specification" />
+                <ScalarProperty Name="craft_image" ColumnName="craft_image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="crimes">
+            <EntityTypeMapping TypeName="CMSModel.crime">
+              <MappingFragment StoreEntitySet="crime">
+                <ScalarProperty Name="crime_id" ColumnName="crime_id" />
+                <ScalarProperty Name="crime_state" ColumnName="crime_state" />
+                <ScalarProperty Name="crime_city" ColumnName="crime_city" />
+                <ScalarProperty Name="crime_iframe" ColumnName="crime_iframe" />
+                <ScalarProperty Name="crime_rate" ColumnName="crime_rate" />
+                <ScalarProperty Name="crime_title" ColumnName="crime_title" />
+                <ScalarProperty Name="crime_summary" ColumnName="crime_summary" />
+                <ScalarProperty Name="crime_criminal" ColumnName="crime_criminal" />
+                <ScalarProperty Name="crime_control" ColumnName="crime_control" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invites">
+            <EntityTypeMapping TypeName="CMSModel.invite">
+              <MappingFragment StoreEntitySet="invite">
+                <ScalarProperty Name="e_id" ColumnName="e_id" />
+                <ScalarProperty Name="email_invite" ColumnName="email_invite" />
+                <ScalarProperty Name="email_message" ColumnName="email_message" />
+                <ScalarProperty Name="email_subject" ColumnName="email_subject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sites">
+            <EntityTypeMapping TypeName="CMSModel.Site">
+              <MappingFragment StoreEntitySet="Site">
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="site_name" ColumnName="site_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="CMSModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_pwd" ColumnName="user_pwd" />
+                <ScalarProperty Name="user_image" ColumnName="user_image" />
+                <ScalarProperty Name="user_epwd" ColumnName="user_epwd" />
+                <ScalarProperty Name="user_type" ColumnName="user_type" />
+                <ScalarProperty Name="user_active" ColumnName="user_active" />
+                <ScalarProperty Name="user_mobile" ColumnName="user_mobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usertypes">
+            <EntityTypeMapping TypeName="CMSModel.usertype">
+              <MappingFragment StoreEntitySet="usertype">
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="role_user_id" ColumnName="role_user_id" />
+                <ScalarProperty Name="role_user_type" ColumnName="role_user_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="police">
+            <EntityTypeMapping TypeName="CMSModel.police">
+              <MappingFragment StoreEntitySet="police">
+                <ScalarProperty Name="police_activation" ColumnName="police_activation" />
+                <ScalarProperty Name="police_home_address" ColumnName="police_home_address" />
+                <ScalarProperty Name="police_city" ColumnName="police_city" />
+                <ScalarProperty Name="police_state" ColumnName="police_state" />
+                <ScalarProperty Name="police_station" ColumnName="police_station" />
+                <ScalarProperty Name="police_idcard" ColumnName="police_idcard" />
+                <ScalarProperty Name="police_type" ColumnName="police_type" />
+                <ScalarProperty Name="police_email" ColumnName="police_email" />
+                <ScalarProperty Name="police_mobile" ColumnName="police_mobile" />
+                <ScalarProperty Name="police_name" ColumnName="police_name" />
+                <ScalarProperty Name="police_id" ColumnName="police_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="policetypes">
+            <EntityTypeMapping TypeName="CMSModel.policetype">
+              <MappingFragment StoreEntitySet="policetype">
+                <ScalarProperty Name="police_type_link" ColumnName="police_type_link" />
+                <ScalarProperty Name="police_type_name" ColumnName="police_type_name" />
+                <ScalarProperty Name="police_id" ColumnName="police_id" />
+                <ScalarProperty Name="police_type_id" ColumnName="police_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="policeworks">
+            <EntityTypeMapping TypeName="CMSModel.policework">
+              <MappingFragment StoreEntitySet="policework">
+                <ScalarProperty Name="police_time" ColumnName="police_time" />
+                <ScalarProperty Name="police_work" ColumnName="police_work" />
+                <ScalarProperty Name="police_status" ColumnName="police_status" />
+                <ScalarProperty Name="police_state" ColumnName="police_state" />
+                <ScalarProperty Name="police_city" ColumnName="police_city" />
+                <ScalarProperty Name="police_email" ColumnName="police_email" />
+                <ScalarProperty Name="police_mobile" ColumnName="police_mobile" />
+                <ScalarProperty Name="police_name" ColumnName="police_name" />
+                <ScalarProperty Name="police_work_id" ColumnName="police_work_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="firapproveds">
+            <EntityTypeMapping TypeName="CMSModel.firapproved">
+              <MappingFragment StoreEntitySet="firapproved">
+                <ScalarProperty Name="approve" ColumnName="approve" />
+                <ScalarProperty Name="police_id" ColumnName="police_id" />
+                <ScalarProperty Name="fir_id" ColumnName="fir_id" />
+                <ScalarProperty Name="fir_title" ColumnName="fir_title" />
+                <ScalarProperty Name="fir_approved_id" ColumnName="fir_approved_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reports">
+            <EntityTypeMapping TypeName="CMSModel.report">
+              <MappingFragment StoreEntitySet="report">
+                <ScalarProperty Name="police_id" ColumnName="police_id" />
+                <ScalarProperty Name="report_address" ColumnName="report_address" />
+                <ScalarProperty Name="report_state" ColumnName="report_state" />
+                <ScalarProperty Name="report_city" ColumnName="report_city" />
+                <ScalarProperty Name="report_processing" ColumnName="report_processing" />
+                <ScalarProperty Name="report_image" ColumnName="report_image" />
+                <ScalarProperty Name="report_summary" ColumnName="report_summary" />
+                <ScalarProperty Name="report_for" ColumnName="report_for" />
+                <ScalarProperty Name="reporter_email" ColumnName="reporter_email" />
+                <ScalarProperty Name="reporter_mobile" ColumnName="reporter_mobile" />
+                <ScalarProperty Name="reporter_name" ColumnName="reporter_name" />
+                <ScalarProperty Name="fir_title" ColumnName="fir_title" />
+                <ScalarProperty Name="fir_id" ColumnName="fir_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contacts">
+            <EntityTypeMapping TypeName="CMSModel.contact">
+              <MappingFragment StoreEntitySet="contact">
+                <ScalarProperty Name="contact_why" ColumnName="contact_why" />
+                <ScalarProperty Name="contact_mobile" ColumnName="contact_mobile" />
+                <ScalarProperty Name="contact_mail" ColumnName="contact_mail" />
+                <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+                <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="blogs">
+            <EntityTypeMapping TypeName="CMSModel.blog">
+              <MappingFragment StoreEntitySet="blog">
+                <ScalarProperty Name="blog_image" ColumnName="blog_image" />
+                <ScalarProperty Name="blogger_image" ColumnName="blogger_image" />
+                <ScalarProperty Name="blogger_email" ColumnName="blogger_email" />
+                <ScalarProperty Name="blogger_name" ColumnName="blogger_name" />
+                <ScalarProperty Name="blog_article" ColumnName="blog_article" />
+                <ScalarProperty Name="blog_id" ColumnName="blog_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="firpolice">
+            <EntityTypeMapping TypeName="CMSModel.firpolouse">
+              <MappingFragment StoreEntitySet="firpolice">
+                <ScalarProperty Name="approved_fir" ColumnName="approved_fir" />
+                <ScalarProperty Name="approvedfir_mobile" ColumnName="approvedfir_mobile" />
+                <ScalarProperty Name="approvedfir_police_id" ColumnName="approvedfir_police_id" />
+                <ScalarProperty Name="approvedfir_email" ColumnName="approvedfir_email" />
+                <ScalarProperty Name="approvedfir_title" ColumnName="approvedfir_title" />
+                <ScalarProperty Name="approvedfir_id" ColumnName="approvedfir_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="approvedfirs">
+            <EntityTypeMapping TypeName="CMSModel.approvedfir">
+              <MappingFragment StoreEntitySet="approvedfir">
+                <ScalarProperty Name="approvedfir_mobile" ColumnName="approvedfir_mobile" />
+                <ScalarProperty Name="approvedfir_police_id" ColumnName="approvedfir_police_id" />
+                <ScalarProperty Name="approvedfir_email" ColumnName="approvedfir_email" />
+                <ScalarProperty Name="approvedfir_title" ColumnName="approvedfir_title" />
+                <ScalarProperty Name="approvedfir_id" ColumnName="approvedfir_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

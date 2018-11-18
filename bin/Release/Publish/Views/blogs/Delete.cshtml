@@ -1,0 +1,72 @@
+﻿@model cmspro.Models.blog
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>blog</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.blog_article)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.blog_article)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.blogger_name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.blogger_name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.blogger_email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.blogger_email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.blogger_image)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.blogger_image)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.blog_image)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.blog_image)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<cmspro.Models.army>
+
+
+
+<link href="~/Content/Army.css" rel="stylesheet" />
+<link href="~/Content/w3.css" rel="stylesheet" />
+<link href="~/jqueryui/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/Army.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/jqueryui/jquery-ui.min.js"></script>
+
+<div id="armyui">
+@foreach (var item in Model)
+{
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="" style="height:250px;width:200px;">
+                <img src="~/uploads/@Html.DisplayFor(modelItem => item.army_image)" style="height:250px;">
+            </a>
+            <div class="name">@Html.DisplayFor(modelItem => item.army_name)</div>
+            <textarea class="desc" rows="4" cols="500">@Html.DisplayFor(modelItem => item.army_summary)</textarea>
+
+            <button type="button" class="btn btn-danger w3-hover-green w3-input">@Html.ActionLink("Details", "DetailsArmy", new { id = item.army_id })</button>
+        </div>
+    </div>
+
+}
+</div>
+
+<script>
+    $("#armyui").sortable();
+</script>
+
+
+

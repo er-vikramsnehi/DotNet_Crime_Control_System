@@ -1,0 +1,65 @@
+﻿@model IEnumerable<cmspro.Models.firpolouse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.approvedfir_title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.approvedfir_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.approvedfir_police_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.approvedfir_mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.approved_fir)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.approvedfir_title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.approvedfir_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.approvedfir_police_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.approvedfir_mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.approved_fir)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.approvedfir_id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.approvedfir_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.approvedfir_id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

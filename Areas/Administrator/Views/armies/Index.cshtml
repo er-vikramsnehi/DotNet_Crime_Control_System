@@ -1,0 +1,35 @@
+﻿@model IEnumerable<cmspro.Models.army>
+
+@{
+    Layout = null;
+}
+
+
+
+<h2 style="font-family:cursive;font-weight:bolder;">Our Police</h2>
+
+<div class="row clearfix">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3 col-md-6 col-sm-12">
+
+            <div class="card">
+
+                <div class="body thumbnail">
+                    <img src="~/uploads/@Html.DisplayFor(modelItem => item.army_image)" class="img-fluid img-thumbnail" alt=" /">
+                    <div class="caption m-t-20">
+                        <h3>Name: @Html.DisplayFor(modelItem => item.army_name) - Mobile: @Html.DisplayFor(modelItem => item.army_mobile)</h3>
+                        <pre>Wife: @Html.DisplayFor(modelItem => item.army_wife)</pre>
+                        <p>Medel: @Html.DisplayFor(modelItem => item.army_medal)</p>
+
+                        <a class="btn btn-raised waves-effect btn-sm" role="button"> @Html.ActionLink("Edit", "Edit", new { id = item.army_id }) </a>
+                        <a href="" class="btn btn-raised waves-effect btn-sm" role="button"> @Html.ActionLink("Delete", "Delete", new { id = item.army_id }) </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    }
+</div>
+

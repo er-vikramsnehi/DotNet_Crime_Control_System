@@ -1,0 +1,65 @@
+﻿@model IEnumerable<cmspro.Models.blog>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.blog_article)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.blogger_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.blogger_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.blogger_image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.blog_image)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.blog_article)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.blogger_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.blogger_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.blogger_image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.blog_image)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.blog_id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.blog_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.blog_id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

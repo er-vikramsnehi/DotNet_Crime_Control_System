@@ -1,0 +1,130 @@
+﻿@model IEnumerable<cmspro.Models.user>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+ 
+<script src="~/Areas/Administrator/Design/assets/plugins/ckeditor/ckeditor.js"></script>
+
+<script src="~/DataTable/js/jquery.js"></script>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Areas/Administrator/Design/assets/bundles/libscripts.bundle.js"></script>
+<script src="~/Areas/Administrator/Design/assets/bundles/vendorscripts.bundle.js"></script>
+<script src="~/Areas/Administrator/Design/assets/bundles/morphingsearchscripts.bundle.js"></script>
+<script src="~/Areas/Administrator/Design/assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="~/Areas/Administrator/Design/assets/plugins/chartjs/Chart.bundle.min.js"></script>
+
+
+
+<script src="~/Areas/Administrator/Design/assets/bundles/mainscripts.bundle.js"></script>
+<script src="~/Areas/Administrator/Design/assets/js/pages/charts/sparkline.min.js"></script>
+<script src="~/Areas/Administrator/Design/assets/js/admin.js"></script>
+<script src="~/Areas/Administrator/Design/assets/js/pages/index.js"></script>
+
+
+
+
+<link href="~/Content/w3.css" rel="stylesheet" />
+<link href="~/DataTable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<link href="~/DataTable/css/dataTables.foundation.min.css" rel="stylesheet" />
+<link href="~/DataTable/css/dataTables.jqueryui.min.css" rel="stylesheet" />
+<link href="~/DataTable/css/dataTables.material.min.css" rel="stylesheet" />
+<link href="~/DataTable/css/dataTables.semanticui.min.css" rel="stylesheet" />
+<link href="~/DataTable/css/dataTables.uikit.min.css" rel="stylesheet" />
+<link href="~/DataTable/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/DataTable/css/jquery.dataTables_themeroller.css" rel="stylesheet" />
+
+<link href="~/Areas/Administrator/Design/assets/css/main.css" rel="stylesheet" />
+<script src="~/DataTable/js/dataTables.bootstrap.min.js"></script>
+<script src="~/DataTable/js/dataTables.bootstrap4.min.js"></script>
+<script src="~/DataTable/js/dataTables.foundation.min.js"></script>
+<script src="~/DataTable/js/dataTables.jqueryui.min.js"></script>
+<script src="~/DataTable/js/dataTables.material.min.js"></script>
+<script src="~/DataTable/js/dataTables.semanticui.min.js"></script>
+<script src="~/DataTable/js/dataTables.uikit.min.js"></script>
+<script src="~/DataTable/js/jquery.dataTables.min.js"></script>
+
+<script src="~/Areas/Administrator/Design/assets/js/pages/forms/editors.js"></script>
+
+
+
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        @{ Html.RenderAction("TopBar", "Default");}
+
+        @{ Html.RenderAction("SideBar", "Default");}
+
+
+        @{ Html.RenderAction("DashBoard", "Default");}
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#img").change(function () {
+            var File = this.files;
+
+            if (File && File[0]) {
+                ReadImage(File[0]);
+            }
+        })
+    })
+
+
+
+
+    var ReadImage = function (file) {
+        var reader = new FileReader;
+        var image = new Image;
+
+        reader.readAsDataURL(file);
+        reader.onload = function (_file) {
+            image.src = _file.target.result;
+            image.onload = function () {
+                var height = this.height;
+                var width = this.width;
+                var type = file.type;
+                var name = file.name;
+                var size = ~~(file.size / 1024) + "KB";
+
+
+                $("#targetImg").attr('src', _file.target.result);
+                $("#description").text("Size:" + size + "," + height + "," + width + " ," + name + " ");
+                $("#imgPreview").show();
+            }
+
+
+        }
+
+    }
+    var ClearPreview = function () {
+
+        $("#img").val('');
+        $("#description").text('');
+        $("#imgPreview").hide();
+    }
+</script>
+

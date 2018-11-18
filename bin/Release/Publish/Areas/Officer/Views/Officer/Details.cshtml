@@ -1,0 +1,98 @@
+﻿@model cmspro.Models.police
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>police</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.police_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_idcard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_idcard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_station)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_station)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_home_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_home_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_activation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_activation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.police_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

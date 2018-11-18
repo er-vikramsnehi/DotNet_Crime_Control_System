@@ -1,0 +1,107 @@
+﻿@model IEnumerable<cmspro.Models.report>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ChartR</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fir_title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reporter_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reporter_mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reporter_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.report_for)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.report_summary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.report_image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.report_processing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.report_city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.report_state)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.report_address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.police_id)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fir_title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.reporter_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.reporter_mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.reporter_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.report_for)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.report_summary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.report_image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.report_processing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.report_city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.report_state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.report_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.police_id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.fir_id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.fir_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.fir_id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,111 @@
+﻿@model IEnumerable<cmspro.Models.army>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.army_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_posting)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_account_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_ifsc_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_wife)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_father)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_medal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_counter_strike)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_hurt_count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.army_summary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_posting)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_account_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_ifsc_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_wife)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_father)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_medal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_counter_strike)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_hurt_count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.army_summary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.army_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.army_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.army_id })
+        </td>
+    </tr>
+}
+
+</table>

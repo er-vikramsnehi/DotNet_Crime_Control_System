@@ -1,0 +1,50 @@
+﻿@model cmspro.Models.firapproved
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>firapproved</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fir_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fir_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fir_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fir_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.police_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.police_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.approve)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.approve)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.fir_approved_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

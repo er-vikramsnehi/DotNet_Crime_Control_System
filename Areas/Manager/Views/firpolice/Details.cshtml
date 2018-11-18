@@ -1,0 +1,66 @@
+﻿@model cmspro.Models.firpolouse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>firpolouse</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.approvedfir_title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.approvedfir_title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.approvedfir_email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.approvedfir_email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.approvedfir_police_id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.approvedfir_police_id)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.approvedfir_mobile)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.approvedfir_mobile)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.approved_fir)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.approved_fir)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.approvedfir_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

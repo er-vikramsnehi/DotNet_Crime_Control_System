@@ -1,0 +1,37 @@
+﻿@model cmspro.Models.invite
+
+
+
+<div class="modal fade" id="invite" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <br /><br /><br /> <br /><br /><br />
+        <div class="modal-content">
+            <h3 style="font-family:cursive;font-weight:bolder;"><center>Invite Your Friend</center></h3>
+            <div class="modal-body">
+                @using (Html.BeginForm("SendMail2", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+                    <div class="form-group ">
+                        @Html.TextBoxFor(model => model.email_invite, new { @class = "form-control", @required = "", @id = "staticEmail1", @placeholder = "Invite to", autofocus = "" })
+                        @Html.ValidationMessageFor(model => model.email_invite, "", new { @class = "error" })
+                    </div>
+                    <br /><hr />
+                    <div class="form-group ">
+                        @Html.TextBoxFor(model => model.email_subject, new { @class = "form-control", @placeholder = "Subject", required = "", id = "inputSubject" })
+                        @Html.ValidationMessageFor(model => model.email_subject, "", new { @class = "error" })
+                    </div>
+                    <br /><hr />
+                    <div class="form-group ">
+                        <textarea name="email_message" class="form-control" placeholder="Message" id="inputMessage"></textarea>
+                        @Html.ValidationMessageFor(model => model.email_message, "", new { @class = "error" })
+                    </div>
+                    <hr />
+                    <button type="submit" class="btn btn-primary w3-input">Send Email</button>
+
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<cmspro.Models.craft>
+ 
+@{ 
+    Layout = null;
+}
+<h2 style="font-family:cursive;font-weight:bolder;">Our Missiles</h2>
+
+<div class="row clearfix">
+    @foreach (var item in Model)
+    { 
+        <div class="col-lg-3 col-md-6 col-sm-12">
+
+            <div class="card">
+
+                <div class="body thumbnail">
+                    <img src="~/uploads/@Html.DisplayFor(modelItem => item.craft_image)" class="img-fluid img-thumbnail" alt=" /">
+                    <div class="caption m-t-20">
+                        <h3>@Html.DisplayFor(modelItem => item.craft_name) - @Html.DisplayFor(modelItem => item.craft_weight)</h3>
+                        <pre>@Html.DisplayFor(modelItem => item.craft_weight)</pre>
+                        <p>@Html.DisplayFor(modelItem => item.craft_specification)</p>
+
+                        <a class="btn btn-raised waves-effect btn-sm" role="button"> @Html.ActionLink("Edit", "Edit", new { id = item.craft_id }) </a>
+                        <a href="" class="btn btn-raised waves-effect btn-sm" role="button"> @Html.ActionLink("Delete", "Delete", new { id = item.craft_id }) </a>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    }
+    </div>
+

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<cmspro.Models.police>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.police_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.police_mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.police_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.police_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.police_idcard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.police_station)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.police_state)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.police_city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.police_home_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.police_activation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_idcard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_station)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_home_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.police_activation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.police_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.police_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.police_id })
+        </td>
+    </tr>
+}
+
+</table>

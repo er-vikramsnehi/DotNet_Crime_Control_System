@@ -1,0 +1,36 @@
+﻿@model cmspro.Models.ViewModel
+
+@using (Html.BeginForm("CreateAccount", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.DropDownListFor(model => model.user_type, ViewBag.TypeList as SelectList, "--Account Type--", new { @class = "form-control w3-padding", required = "" })
+    @Html.ValidationMessageFor(model => model.user_type, "", new { @class = "error" })
+    <br />
+    @Html.TextBoxFor(model => model.user_name, new { @class = "form-control w3-padding", @placeholder = "name", required = "" })
+    @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "error" })
+    <br />
+    @Html.TextBoxFor(model => model.user_email, new { @class = "form-control w3-padding", @placeholder = "email", required = "", type = "email" })
+    @Html.ValidationMessageFor(model => model.user_email, "", new { @class = "error" })
+    <br />
+    @Html.TextBoxFor(model => model.user_mobile, new { @class = "form-control w3-padding", @placeholder = "Mobile", required = "" })
+    @Html.ValidationMessageFor(model => model.user_mobile, "", new { @class = "error" })
+    <br />
+
+    <label class="w3-input w3-border w3-hover-blue w3-red">
+        <i class="glyphicon glyphicon-cloud-upload"></i> Upload Image
+        <input type="file" name="user_image" id="img" class="form-control w3-hide " accept="image/*" required />
+    </label>
+    @Html.ValidationMessageFor(model => model.user_image, "", new { @class = "error" })
+
+    <br />
+    @Html.PasswordFor(model => model.user_pwd, new { @class = "form-control w3-padding", @placeholder = "Password", required = "" })
+    @Html.ValidationMessageFor(model => model.user_pwd, "", new { @class = "error" })
+    <br />
+    @Html.TextBoxFor(model => model.site_name, new { @class = "form-control w3-padding ", @placeholder = "http://", required = "", type = "url" })
+    @Html.ValidationMessageFor(model => model.site_name, "", new { @class = "error" })
+
+
+
+    <br />
+    <input type="submit" value="Register Data" class="btn btn-success w3-input" />
+}

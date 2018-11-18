@@ -1,0 +1,31 @@
+﻿@model cmspro.Models.craft
+
+
+@using (Html.BeginForm("Create", "crafts", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.TextBoxFor(model => model.craft_name, new { @class = "form-control w3-padding", @placeholder = "Craft Name", required = "" })
+    @Html.ValidationMessageFor(model => model.craft_name, "", new { @class = "error" })
+    <br />
+    @Html.TextBoxFor(model => model.craft_size, new { @class = "form-control w3-padding", @placeholder = "Craft Height and Craft Wight", required = "", type = "email" })
+    @Html.ValidationMessageFor(model => model.craft_size, "", new { @class = "error" })
+    <br />
+    @Html.TextBoxFor(model => model.craft_weight, new { @class = "form-control w3-padding", @placeholder = "Craft Weight in Tone", required = "" })
+    @Html.ValidationMessageFor(model => model.craft_weight, "", new { @class = "error" })
+    <br />
+
+    <label class="w3-input w3-border w3-hover-blue w3-red">
+        <i class="glyphicon glyphicon-cloud-upload"></i> Upload Image
+        <input type="file" name="craft_image" id="img" class="form-control w3-hide " accept="image/x-png,image/gif,image/jpeg,image/jpg" required />
+    </label>
+    @Html.ValidationMessageFor(model => model.craft_image, "", new { @class = "error" })
+
+    <br />
+    @Html.PasswordFor(model => model.craft_specification, new { @class = "form-control w3-padding", @placeholder = "Craft Specification", required = "" })
+    @Html.ValidationMessageFor(model => model.craft_specification, "", new { @class = "error" })
+ 
+
+
+    <br />
+    <input type="submit" value="Add Craft" class="btn btn-success" />
+}

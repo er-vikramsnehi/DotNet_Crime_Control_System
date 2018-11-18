@@ -1,0 +1,227 @@
+﻿@model cmspro.Models.user
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Activation</title>
+
+    <link href="~/meterialicon/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="~/Content/w3.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <style>
+        /* Note: Try to remove the following lines to see the effect of CSS positioning */
+        .affix {
+            top: 0;
+            width: 100%;
+            z-index: 9999 !important;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <center><h1 style="color:black;"><b><i class="zmdi zmdi-shield-security" style="font-size:200%;color:midnightblue;"></i> Activation Now</b></h1></center>
+    </div>
+    <div class="navbar w3-white navbar-top w3-card-4" data-spy="affix" data-offset-top="197">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="color:deeppink;">+</button>
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav navbar-right" style="right:10px;">
+                    @if (Session["name"] != null)
+                    {
+                        <li class="w3-dropdown-hover w3-hover-red">
+                            <a> <img src="~/uploads/@Session["image"]" style="width:25px;height:25px;" class="w3-card-2 w3-border w3-circle"> Welcome:  @Session["name"]</a>
+
+                            <div class="w3-dropdown-content w3-card-4" style="width:200px;border:2px solid black;">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><img src="~/uploads/@Session["image"]" style="width:100%;height:150px;" class="w3-card-2 w3-border"></li>
+                                    <li class="list-group-item"><a href="mailto:@Session["email"]">Email: @Session["email"]</a></li>
+                                    <li class="list-group-item"><a href="callto:@Session["mobile"]">Mobile: @Session["mobile"]</a></li>
+                                    <li class="list-group-item"><a href="@Session["accounttype"]">Type: @Session["accounttype"]</a></li>
+                                    <li class="list-group-item"><a href="http://@Session["site"]">Site: @Session["site"]</a></li>
+                                    <li class="list-group-item w3-red"><a href="/Home/Logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    }
+                    else
+                    {
+                        <li><a data-toggle="modal" data-target="#exampleModalCenter" style="color:deeppink;cursor:pointer;"><i class="glyphicon glyphicon-user"> Login</i></a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="col-lg-12">
+
+
+            <div class="col-lg-8">
+                <div class="list-group">
+                    <a class="list-group-item">Name: <font style="float:right;">@Html.DisplayFor(model => model.user_name) <i class="zmdi zmdi-shield-check" style="color:darkblue;" title="Verified Account"></i></font>  </a>
+                    <a class="list-group-item">Email: <font style="float:right;">@Html.DisplayFor(model => model.user_email)</font></a>
+                    <a class="list-group-item">Mobile:  <font style="float:right;">@Html.DisplayFor(model => model.user_mobile)</font></a>
+                    <a class="list-group-item">User Type: <font style="float:right;">@Html.DisplayFor(model => model.user_type)</font></a>
+                    <a class="list-group-item">Activation: <font style="float:right;"> @Html.DisplayFor(model => model.user_active)</font></a>
+                    <a class="list-group-item">Back: <font style="float:right;"> @Html.ActionLink("Back to List", "Index")</font></a>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.user_id)
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.user_name, new { htmlAttributes = new { @class = "form-control w3-hide" } })
+                                    @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.user_email, new { htmlAttributes = new { @class = "form-control w3-hide" } })
+                                    @Html.ValidationMessageFor(model => model.user_email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.user_pwd, new { htmlAttributes = new { @class = "form-control w3-hide" } })
+                                    @Html.ValidationMessageFor(model => model.user_pwd, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.user_image, new { htmlAttributes = new { @class = "form-control w3-hide" } })
+                                    @Html.ValidationMessageFor(model => model.user_image, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.user_epwd, new { htmlAttributes = new { @class = "form-control w3-hide" } })
+                                    @Html.ValidationMessageFor(model => model.user_epwd, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.user_type, new { htmlAttributes = new { @class = "form-control w3-hide" } })
+                                    @Html.ValidationMessageFor(model => model.user_type, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <a class="list-group-item w3-pink">
+                                        Activation:
+                                        <font style="float:right;">
+                                            <select name="user_active" class="form-check form-control">
+                                                <option value="1" class="form-control w3-pink">Activate</option>
+                                                <option value="0" class="form-control w3-pink">Deactivate</option>
+                                            </select>
+                                        </font>
+                                    </a>
+
+
+                                    @Html.ValidationMessageFor(model => model.user_active, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.user_mobile, new { htmlAttributes = new { @class = "form-control w3-hide" } })
+                                    @Html.ValidationMessageFor(model => model.user_mobile, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <div class="nav navbar-fixed-bottom w3-card-4 w3-white w3-padding">
+                                        <input type="submit" value="Activate Account" class="btn btn-danger w3-input" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="col-lg-4"><img src="~/uploads/@Html.DisplayFor(model => model.user_image)" class="img-responsive w3-card-4 " /></div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var SendEmail = function () {
+            $.ajax({
+                type: "POST",
+                url: "/Home/SendMail",
+                success: function (data) {
+                    alert("Success");
+                }
+            })
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿<!-- main content -->
+<section class="content">
+    <div class="container-fluid">
+        @if (Session["name"] == null)
+        {
+
+            <div class="block-header">
+                <h2>Dashboard</h2>
+                <small class="text-muted">Welcome to @Session["name"]</small>
+            </div>
+        }
+
+        <div class="row clearfix top-report" id="dbord">
+            @{ Html.RenderAction("ListUser", "Default");}
+        </div>
+        <div class="row clearfix top-report" id="dbord2">
+            <br /><hr />
+            <fieldset>@{ Html.RenderAction("Create", "crafts");}</fieldset>
+        </div>
+        <div class="row clearfix top-report" id="dbord3">
+            <br /><hr />
+            <fieldset>@{ Html.RenderAction("Index", "crafts");}</fieldset>
+        </div>
+        <div class="row clearfix top-report" id="addpolice">
+            <br /><hr />
+            <fieldset>@{ Html.RenderAction("CreatePolice", "Default");}</fieldset>
+        </div>
+        <div class="row clearfix top-report" id="viewarmies">
+            <br /><hr />
+            <fieldset>@{ Html.RenderAction("Index", "armies");}</fieldset>
+        </div>
+
+
+
+
+
+        <script>
+            document.getElementById("viewarmies").style.display = "none";
+            document.getElementById("addpolice").style.display = "none";
+            document.getElementById("dbord2").style.display = "none";
+            document.getElementById("dbord3").style.display = "none";
+            function AddCraft() {
+                document.getElementById("dbord").style.display = "none";
+                document.getElementById("dbord2").style.display = "block";
+                document.getElementById("dbord3").style.display = "none";
+                document.getElementById("viewarmies").style.display = "none";
+            }
+            function DashBoard() {
+                document.getElementById("dbord2").style.display = "none";
+                document.getElementById("dbord").style.display = "block";
+                document.getElementById("dbord3").style.display = "none";
+                document.getElementById("viewarmies").style.display = "none";
+            }
+            function ViewCraft() {
+                document.getElementById("dbord2").style.display = "none";
+                document.getElementById("dbord").style.display = "none";
+                document.getElementById("dbord3").style.display = "block";
+                document.getElementById("viewarmies").style.display = "none";
+
+            }
+            function AddPolice() {
+                document.getElementById("addpolice").style.display = "block";
+                document.getElementById("dbord2").style.display = "none";
+                document.getElementById("dbord").style.display = "none";
+                document.getElementById("dbord3").style.display = "none";
+                document.getElementById("viewarmies").style.display = "none";
+            }
+
+            function ViewPolice() {
+                document.getElementById("addpolice").style.display = "none";
+                document.getElementById("dbord2").style.display = "none";
+                document.getElementById("dbord").style.display = "none";
+                document.getElementById("dbord3").style.display = "none";
+                document.getElementById("viewarmies").style.display = "block";
+         }
+            
+
+        </script>
+
+
+
+
+    </div>
+</section>

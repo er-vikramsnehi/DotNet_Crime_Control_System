@@ -1,0 +1,70 @@
+﻿@model IEnumerable<cmspro.Models.user>
+
+<fieldset class="w3-padding w3-responsive">
+    <button class="btn btn-danger" style="color:white;">
+        @Html.ActionLink("CreateAccount", "CreateAccount")
+    </button>
+    <table class="display w3-table-responsive " id="MyDataTable">
+        <thead>
+            <tr>
+                <th>
+                    User Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Mobile
+                </th>
+                <th>
+                    Password
+                </th>
+                <th>
+                    Image Galary
+                </th>
+                
+                <th>
+                   Account Type
+                </th>
+                <th>Setting</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.user_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.user_email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.user_mobile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.user_pwd)
+                    </td>
+                    <td>
+                        <img src="~/uploads/@Html.DisplayFor(modelItem => item.user_image)" height="55px" width="45px" class="w3-circle" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.user_type)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.user_id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.user_id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.user_id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>
+
+<script>
+    $(document).ready(function () {
+        $("#MyDataTable").dataTable();
+    })
+</script>

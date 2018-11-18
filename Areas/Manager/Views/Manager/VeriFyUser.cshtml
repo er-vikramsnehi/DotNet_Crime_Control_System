@@ -1,0 +1,67 @@
+﻿@model IEnumerable<cmspro.Models.user>
+
+<fieldset class="w3-padding w3-responsive">
+
+
+    <table class="display w3-table-responsive table" id="MyDataTable2">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+
+            <th>
+                Image
+            </th>
+
+            <th>
+                Account Type
+            </th>
+            <th>
+                Acount Activate(0/1)
+            </th>
+            <th>
+                Mobile Number
+            </th>
+
+            <th>Activate</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user_email)
+                </td>
+                <td>
+                    <img src="~/uploads/@Html.DisplayFor(modelItem => item.user_image)" style="height:50px;width:50px;" class="w3-card-2 img-circle" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user_active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user_mobile)
+                </td>
+                <td>
+                    @Html.ActionLink("Activate Now", "ActivateNow", new { id = item.user_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</fieldset>
+
+
+<script>
+    $(document).ready(function () {
+        $("#MyDataTable2").dataTable();
+    })
+</script>

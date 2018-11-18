@@ -1,0 +1,75 @@
+﻿@model cmspro.Models.user
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Administrator/Views/Shared/_src_nav_top.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>user</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.user_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_pwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_pwd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_epwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_epwd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.user_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

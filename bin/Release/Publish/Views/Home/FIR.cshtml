@@ -1,0 +1,117 @@
+﻿@model cmspro.Models.report
+
+
+
+<div class="modal fade " tabindex="-1" id="firreport" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <fieldset style="border:3px solid black;" class="w3-card-2">
+
+                <div class="col-lg-offset-3 col-lg-9">
+
+                    @using (Html.BeginForm("ReportSave", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <div class="w3-orange navbar nav"><center><h4>report</h4></center></div>
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Title: @Html.EditorFor(model => model.fir_title, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.fir_title, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Your Name: @Html.EditorFor(model => model.reporter_name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.reporter_name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Your Mobile: @Html.EditorFor(model => model.reporter_mobile, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.reporter_mobile, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Your Emergency Email: @Html.EditorFor(model => model.reporter_email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.reporter_email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Report For: @Html.EditorFor(model => model.report_for, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.report_for, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Write Your Report :@Html.EditorFor(model => model.report_summary, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.report_summary, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Capture Crime Image:
+                                    <label for="caapture"><img src="~/images/images.png" style="height:40px;width:40px;border:4px solid black;" title="Upload Image" /></label>
+                                    <input type="file" accept="image/*" id="caapture" name="report_image" placeholder="Upload Image" class="w3-hide" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    City :@Html.EditorFor(model => model.report_city, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.report_city, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    State :@Html.EditorFor(model => model.report_state, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.report_state, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Address :@Html.EditorFor(model => model.report_address, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.report_address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Apply your FIR" class="btn w3-orange w3-input" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+
+            </fieldset>
+        </div>
+    </div>
+</div>

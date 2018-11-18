@@ -1,0 +1,89 @@
+﻿<!-- main content -->
+<br />
+<section class="content">
+
+    <div class="container-fluid">
+        @if (Session["name"] == null)
+        {
+
+            <div class="block-header">
+                <h2>Dashboard</h2>
+                <small class="text-muted">Welcome to @Session["name"]</small>
+            </div>
+        }
+
+        <div class="row clearfix top-report" id="dbord1">
+            @{ Html.RenderAction("VeriFyUser", "Manager");}
+        </div>
+        <div class="row clearfix top-report" id="dbord2">
+            <br /><hr />
+            <fieldset>
+                @{ Html.RenderAction("Report", "Manager");}
+            </fieldset>
+        </div>
+
+        <div class="row clearfix top-report" id="addpolice">
+            <br /><hr />
+            <fieldset>@{ Html.RenderAction("CreatePolice", "Manager");}</fieldset>
+        </div>
+        <div class="row clearfix top-report" id="viewarmies">
+            <br /><hr />
+            <fieldset>@{ Html.RenderAction("Index", "armies");}</fieldset>
+        </div>
+
+        <div class="row clearfix top-report" id="dbord3">
+            <br /><hr />
+            <fieldset>-------------------------------------------------------</fieldset>
+        </div>
+
+
+        <script>
+            document.getElementById("viewarmies").style.display = "none";
+            document.getElementById("addpolice").style.display = "none";
+            document.getElementById("dbord2").style.display = "none";
+            document.getElementById("dbord3").style.display = "none";
+
+            function Report() {
+                document.getElementById("dbord1").style.display = "none";
+                document.getElementById("dbord3").style.display = "none";
+                document.getElementById("dbord2").style.display = "block";
+            }
+            function AddCraft() {
+                document.getElementById("dbord").style.display = "none";
+                document.getElementById("dbord2").style.display = "block";
+                document.getElementById("dbord3").style.display = "none";
+            }
+            function DashBoard() {
+                document.getElementById("dbord2").style.display = "none";
+                document.getElementById("dbord").style.display = "block";
+                document.getElementById("dbord3").style.display = "none";
+            }
+            function ViewCraft() {
+                document.getElementById("dbord2").style.display = "none";
+                document.getElementById("dbord").style.display = "none";
+                document.getElementById("dbord3").style.display = "block";
+
+            }
+
+            function AddPolice() {
+                document.getElementById("addpolice").style.display = "block";
+                document.getElementById("dbord2").style.display = "none";
+                document.getElementById("dbord").style.display = "none";
+                document.getElementById("dbord3").style.display = "none";
+                document.getElementById("viewarmies").style.display = "none";
+            }
+
+            function ViewPolice() {
+                document.getElementById("addpolice").style.display = "none";
+                document.getElementById("dbord2").style.display = "none";
+                document.getElementById("dbord").style.display = "none";
+                document.getElementById("dbord3").style.display = "none";
+                document.getElementById("viewarmies").style.display = "block";
+            }
+        </script>
+
+
+
+
+    </div>
+</section>

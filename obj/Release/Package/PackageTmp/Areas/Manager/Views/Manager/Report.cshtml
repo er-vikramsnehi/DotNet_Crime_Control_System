@@ -1,0 +1,30 @@
+﻿@model IEnumerable<cmspro.Models.report>
+<link href="~/Content/w3.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+
+@foreach (var item in Model)
+{
+    <div class="card col-lg-3" style="width:400px">
+        <h3 class="responsive-img">@Html.DisplayFor(modelItem => item.fir_title)</h3>
+        <img class="card-img-top" src="~/uploads/@Html.DisplayFor(modelItem => item.report_image)" alt="Card image" style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">@Html.DisplayFor(modelItem => item.reporter_name)</h4>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.report_state)</p>
+            <button class="btn btn-primary" style="color:white;font-weight:bold;">@Html.ActionLink("See F.I.R.", "ReportDetails", new { id = item.fir_id })</button>
+            <button class="btn btn-danger" style="color:white;font-weight:bold;">Approved Service</button>
+        </div>
+    </div>
+}
+
+ 
+
+
+<script>
+    $(document).ready(function () {
+        $("#MyDataTable3").dataTable();
+    })
+</script>

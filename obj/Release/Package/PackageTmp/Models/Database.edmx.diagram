@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df0e4110c2e04ca4acdb96e929fc099a" Name="Diagram1">
+        <EntityTypeShape EntityType="CMSModel.activate" Width="1.5" PointX="1" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMSModel.army" Width="1.5" PointX="2.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMSModel.craft" Width="1.5" PointX="1" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMSModel.crime" Width="1.5" PointX="4.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMSModel.invite" Width="1.5" PointX="1" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMSModel.Site" Width="1.5" PointX="2.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMSModel.user" Width="1.5" PointX="4.375" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMSModel.usertype" Width="1.5" PointX="9.375" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CMSModel.police" Width="1.5" PointX="7.625" PointY="0.5" />
+        <EntityTypeShape EntityType="CMSModel.policetype" Width="1.5" PointX="6" PointY="4.25" />
+        <EntityTypeShape EntityType="CMSModel.policework" Width="1.5" PointX="9.25" PointY="0.5" />
+        <EntityTypeShape EntityType="CMSModel.firapproved" Width="1.5" PointX="7.625" PointY="3.75" />
+        <EntityTypeShape EntityType="CMSModel.report" Width="1.5" PointX="6" PointY="0.5" />
+        <EntityTypeShape EntityType="CMSModel.contact" Width="1.5" PointX="2.75" PointY="6.5" />
+        <EntityTypeShape EntityType="CMSModel.blog" Width="1.5" PointX="1" PointY="6.5" />
+        <EntityTypeShape EntityType="CMSModel.firpolouse" Width="1.5" PointX="4.375" PointY="6.5" />
+        <EntityTypeShape EntityType="CMSModel.approvedfir" Width="1.5" PointX="6" PointY="6.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

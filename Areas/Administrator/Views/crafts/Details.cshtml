@@ -1,0 +1,63 @@
+﻿@model cmspro.Models.craft
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div>
+    <h4>craft</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.craft_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.craft_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.craft_size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.craft_size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.craft_weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.craft_weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.craft_specification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.craft_specification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.craft_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.craft_image)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.craft_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
